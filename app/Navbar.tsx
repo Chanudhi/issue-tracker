@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { usePathname } from 'next/navigation';
 import { AiFillBug } from "react-icons/ai";
-import classnames from
+import classnames from 'classnames';
 
 const Navbar = () => {
     const currentPath = usePathname();
