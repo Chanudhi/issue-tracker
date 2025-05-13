@@ -17,8 +17,16 @@ const Navbar = () => {
         <Link href='/'><AiFillBug/> </Link>
         <ul className='flex space-x-6 ml-6'>
             {links.map(links =>(
-                <Link key={links.href}
-                 className={`${links.href==currentPath ? 'text-zinc-900':'text-zinc-500'} hover:text-zinc-800 transition-colors`} href={links.href}>{links.label}
+                <Link 
+                key={links.href}
+                 className={classnames({
+                   'text-zinc-900': links.href=== currentPath,
+                   'text-zinc-500':links.href !== currentPath,
+                   'hover:text-zinc-800 transition-colors':true,
+                 })
+
+                 } 
+                 href={links.href}>{links.label}
                 </Link>
             ))}
             </ul>
